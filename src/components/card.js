@@ -1,22 +1,77 @@
+// TASK 5
+// ---------------------
+// Implement this function, which should return the markup you see below.
+// It takes as its only argument an "article" object with `headline`, `authorPhoto` and `authorName` properties.
+// The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
+// The text inside elements will be set using their `textContent` property (NOT `innerText`).
+// Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
+//
+// <div class="card">
+//   <div class="headline">{ headline }</div>
+//   <div class="author">
+//     <div class="img-container">
+//       <img src={ authorPhoto }>
+//     </div>
+//     <span>By { authorName }</span>
+//   </div>
+// </div>
+//
 const Card = (article) => {
-  // TASK 5
-  // ---------------------
-  // Implement this function, which should return the markup you see below.
-  // It takes as its only argument an "article" object with `headline`, `authorPhoto` and `authorName` properties.
-  // The tags used, the hierarchy of elements and their attributes must match the provided markup exactly!
-  // The text inside elements will be set using their `textContent` property (NOT `innerText`).
-  // Add a listener for click events so that when a user clicks on a card, the headline of the article is logged to the console.
-  //
-  // <div class="card">
-  //   <div class="headline">{ headline }</div>
-  //   <div class="author">
-  //     <div class="img-container">
-  //       <img src={ authorPhoto }>
-  //     </div>
-  //     <span>By { authorName }</span>
-  //   </div>
-  // </div>
-  //
+article.forEach(() => {
+  article.headline = headline;
+  article.authorPhoto = authorPhoto;
+  article.authorName = authorName;
+  let cardDiv = document.createElement('div');
+    let headlineDiv = document.createElement('div');
+    let authorDiv = document.createElement('div');
+    let imgDiv = document.createElement('div');
+    let img = document.createElement('img');
+    let span = document.createElement('span');
+
+    cardDiv.appendChild(headlineDiv);
+    cardDiv.appendChild(authorDiv);
+    authorDiv.appendChild(imgDiv);
+    imgDiv.appendChild(img);
+    authorDiv.appendChild(span);
+
+    cardDiv.classList.add('card');
+    headlineDiv.classList.add('headline');
+    authorDiv.classList.add('author');
+    imgDiv.classList.add('img-container');
+
+    img.src.add(9);
+
+    // span.textContent = authorName;
+    // headlineDiv.textContent = headline;
+    return cardDiv;
+});
+    // let cardDiv = document.createElement('div');
+    // let headlineDiv = document.createElement('div');
+    // let authorDiv = document.createElement('div');
+    // let imgDiv = document.createElement('div');
+    // let img = document.createElement('img');
+    // let span = document.createElement('span');
+
+    // cardDiv.appendChild(headlineDiv);
+    // cardDiv.appendChild(authorDiv);
+    // authorDiv.appendChild(imgDiv);
+    // imgDiv.appendChild(img);
+    // authorDiv.appendChild(span);
+
+    // cardDiv.classList.add('card');
+    // headlineDiv.classList.add('headline');
+    // authorDiv.classList.add('author');
+    // imgDiv.classList.add('img-container');
+
+    // // img.src = authorPhoto;
+
+    // // span.textContent = authorName;
+    // // headlineDiv.textContent = headline;
+    // return cardDiv;
+  
+
+
+
 }
 
 const cardAppender = (selector) => {
