@@ -14,16 +14,17 @@ import axios from "axios";
 // </div>
 //
 const Tabs = (topics) => {
-  const topicsDiv = document.createElement('div');
-  topicsDiv.classList.add('topics');
-topics.forEach(topic => {
-  let tabDiv = document.createElement('div');
-  tabDiv.classList.add('tab');
-  tabDiv.textContent = topic.textContent;
-  topicsDiv.appendChild(tabDiv);
+  let topicDiv = document.createElement('div');
+  
+  topicDiv.classList.add('topics');
 
-});
-return topicsDiv
+  topics.forEach(topic => {
+    let tabDiv = document.createElement('div');
+    tabDiv.classList.add('tab');
+    topicDiv.appendChild(tabDiv);
+    tabDiv.textContent = topic;
+  });
+  return topicDiv
 }
 
   // TASK 4

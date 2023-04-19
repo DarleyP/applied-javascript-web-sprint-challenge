@@ -62,7 +62,9 @@ const Card = (article) => {
 
 const cardAppender = (selector) => {
  axios.get('http://localhost:5001/api/articles')
- 
+ .then( res => {
+  
+ })
 }
 
 export { Card, cardAppender }
