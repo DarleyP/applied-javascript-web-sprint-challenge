@@ -46,9 +46,8 @@ let Header = (title, date, temp) => {
 // so all that you need to do is pass it into the querySelector method
 // for the tests to work!
 const headerAppender = (selector) => {
-  let dom1 = document.body.querySelector(selector)
-  const header1 = Header('Bloomtech', 'October 23, 1999, 999 F')
+  let dom1 = document.querySelector(selector)
+  const header1 = Header('Bloomtech', 'October 23', '999F')
   dom1.appendChild(header1)
 }
-
 export { Header, headerAppender }

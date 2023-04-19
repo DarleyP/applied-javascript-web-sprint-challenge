@@ -1,3 +1,4 @@
+import axios from "axios";
 // TASK 5
 // ---------------------
 // Implement this function, which should return the markup you see below.
@@ -17,11 +18,12 @@
 // </div>
 //
 const Card = (article) => {
-article.forEach(() => {
-  article.headline = headline;
-  article.authorPhoto = authorPhoto;
-  article.authorName = authorName;
-  let cardDiv = document.createElement('div');
+  let headline = article.headline
+  let authorName = article.authorName
+  let authorPhoto = article.authorPhoto
+ 
+
+    let cardDiv = document.createElement('div');
     let headlineDiv = document.createElement('div');
     let authorDiv = document.createElement('div');
     let imgDiv = document.createElement('div');
@@ -39,43 +41,16 @@ article.forEach(() => {
     authorDiv.classList.add('author');
     imgDiv.classList.add('img-container');
 
-    img.src.add(9);
+    img.src = authorPhoto;
 
-    // span.textContent = authorName;
-    // headlineDiv.textContent = headline;
-    return cardDiv;
-});
-    // let cardDiv = document.createElement('div');
-    // let headlineDiv = document.createElement('div');
-    // let authorDiv = document.createElement('div');
-    // let imgDiv = document.createElement('div');
-    // let img = document.createElement('img');
-    // let span = document.createElement('span');
+    span.textContent = authorName ;
+    headlineDiv.textContent =  headline ;
 
-    // cardDiv.appendChild(headlineDiv);
-    // cardDiv.appendChild(authorDiv);
-    // authorDiv.appendChild(imgDiv);
-    // imgDiv.appendChild(img);
-    // authorDiv.appendChild(span);
-
-    // cardDiv.classList.add('card');
-    // headlineDiv.classList.add('headline');
-    // authorDiv.classList.add('author');
-    // imgDiv.classList.add('img-container');
-
-    // // img.src = authorPhoto;
-
-    // // span.textContent = authorName;
-    // // headlineDiv.textContent = headline;
-    // return cardDiv;
+    return cardDiv
   
 
 
-
-}
-
-const cardAppender = (selector) => {
-  // TASK 6
+ // TASK 6
   // ---------------------
   // Implement this function that takes a css selector as its only argument.
   // It should obtain articles from this endpoint: `http://localhost:5001/api/articles` (test it with console.log!!).
@@ -85,4 +60,10 @@ const cardAppender = (selector) => {
   //
 }
 
+const cardAppender = (selector) => {
+ axios.get('http://localhost:5001/api/articles')
+ 
+}
+
 export { Card, cardAppender }
+
